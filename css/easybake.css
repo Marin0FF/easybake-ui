@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+.parentEl {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  overflow-x: hidden; 
+}
+.carousel-wrapper
+{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60vw;
+  overflow: visible;
+}
+.carousel-viewport {
+  width: inherit;
+  overflow: hidden;
+  border-radius: 2vh;
+
+}
+.carousel-container {
+  will-change: contents;
+    transform: translateZ(0);
+    padding: 0;
+    position: relative;
+}
+.carousel-slide
+{
+  float:left;
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(0.5);
+}
+.carousel-slide img {
+  width: 100%;
+}
+.overflow .carousel-slide img {
+  width: 80%;
+  border-radius: 2vh;
+}
+/* carousel pagination styles */
+.carousel-pagination {
+  position: absolute;
+  left: 50%;
+  top: 106%;
+  transform: translateX(-50%);
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  z-index: 5000;
+}
+.overflow .carousel-pagination {
+  top:120%;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  position: relative;
+  background-color: #fff;
+  margin: 12px 8px;
+  opacity: 0%;
+}
+/* carousel navigation element styles */
+.carousel-navigation {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 85vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 5000;
+}
+.carousel-button {
+    pointer-events: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 5px 24px rgba(14, 14, 14, 0.26);
+  }
+/* hero carousel styling */
+.hero.carousel-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #2f3437;  
+}
+.hero .carousel-viewport {
+    display: flex;
+    justify-content: start;
+    width: 100vw;
+    height: 100vh; 
+    border-radius: 0;      
+}
+.hero .carousel-viewport .carousel-container {
+    width: 50vw;
+    height: 100vh;    
+}
+.carousel-slide.left {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    float:left;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(1); 
+}
+.carousel-slide.right {
+    float:left;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(1); 
+}
+/* hero carousel pagination styles */
+.hero .carousel-pagination {
+    left: 95%;
+    top: 50%;
+    transform: translate(0, -50%);
+    flex-direction: column; 
+}
+/* carousel content style */
+.slide-contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    width: 85%;
+}
+.slide-contents p {
+    color: #fff;
+    font-size: 1.5vw;
+    padding: 0 4vw;
+    line-height: 1.65;
+    font-weight: 200;
+    margin: 0;
+    opacity: 0.8;
+}
+.slide-contents .carousel-button {
+    margin-left: auto;
+    margin-right: auto;
+}
+.slide-contents h1 {
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    font-size: 64pt;
+    color: #fff;
+    text-transform: uppercase;
+}
+/* call to action button */
+.cta-btn::before,
+.cta-btn::after {
+  position: absolute;
+  content: "";
+}
+.cta-btn {
+  position: relative;
+  background-color: white;
+  cursor: pointer;
+  margin-top: 5vh;
+  min-width: 150px;
+  border-radius: 11px;
+  box-shadow: 0px 5px 20px rgba(14, 14, 14, 0.151);
+  z-index: 5000;
+}
+  .cta-btn a {         
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    transition: 0.3s;
+  }
+  .cta-btn::before {
+    background-color: #0466c8;
+    border-radius: 10px;
+    transition: 0.3s ease-out;
+  }
+  .cta-btn a {
+    color: #fff;
+    border-radius: 10px;
+    transition: 0.2s 0.1s;
+  }
+  .cta-btn a:hover {
+    color: #0466c8;
+    transition: 0.2s 0.1s;
+  }
+  .cta-btn.hover-filled-slide-right::before {
+    top:0; bottom: 0; right: 0;
+    height: 100%; width: 100%;
+    border-radius: 10px;
+  }
+  .cta-btn.hover-filled-slide-right:hover::before {
+    width: 0%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
